@@ -35,9 +35,7 @@
                         sans: ['"Zen Kaku Gothic New"', 'sans-serif'],
                         serif: ['"Zen Old Mincho"', 'serif'],
                     },
-                    backgroundImage: {
-                        'hero': "linear-gradient(rgba(30, 41, 59, 0.6), rgba(30, 41, 59, 0.7)), url('https://images.unsplash.com/photo-1516575150278-77136aed6920?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')",
-                    }
+                    // backgroundImageRemoved
                 }
             }
         }
@@ -92,8 +90,12 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="relative min-h-screen flex items-center justify-center bg-hero bg-cover bg-[80%_center] md:bg-right text-white pt-20 pb-16">
-        <div class="container mx-auto px-4 text-center max-w-3xl">
+    <section class="relative min-h-screen flex items-center justify-center bg-brand-navy text-white pt-20 pb-16">
+        <!-- Decoration circles -->
+        <div class="absolute top-0 left-0 -ml-20 -mt-20 w-64 h-64 rounded-full bg-brand-gold opacity-10 blur-3xl"></div>
+        <div class="absolute bottom-0 right-0 -mr-20 -mb-20 w-80 h-80 rounded-full bg-blue-500 opacity-10 blur-3xl"></div>
+
+        <div class="container mx-auto px-4 text-center max-w-3xl relative z-10">
             <p class="fade-in-up text-brand-goldLight font-serif text-lg md:text-xl mb-6 tracking-widest">
                 子育ても仕事も、一通りやりきったあなたへ
             </p>
