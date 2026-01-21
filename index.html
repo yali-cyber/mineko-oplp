@@ -36,7 +36,6 @@
                         serif: ['"Zen Old Mincho"', 'serif'],
                     },
                     backgroundImage: {
-                        // ▼▼▼ ここを修正しました ▼▼▼
                         // フォルダを使わず、htmlファイルの隣にある画像を参照するようにしました。
                         // Githubには index.html と hero_bg.png を同じ場所にアップロードしてください。
                         'hero': "linear-gradient(rgba(30, 41, 59, 0.6), rgba(30, 41, 59, 0.7)), url('./hero_bg.png')",
@@ -318,8 +317,8 @@
             <div class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-brand-navy">
                 <div class="w-32 h-32 mx-auto rounded-full overflow-hidden mb-6 border-4 border-gray-100">
                      <!-- ▼▼▼ ここを修正しました ▼▼▼ -->
-                     <!-- imagesフォルダに入れた profile.png (または .jpg) を読み込みます -->
-                     <img src="./images/profile.png" alt="心みねこ" class="w-full h-full object-cover">
+                     <!-- imagesフォルダを使わず、ファイル隣のprofile.png (または .jpg) を読み込みます -->
+                     <img src="./profile.png" alt="心みねこ" class="w-full h-full object-cover">
                 </div>
                 <h4 class="text-xl font-bold text-brand-navy mb-2">心みねこ<span class="text-sm font-normal text-gray-500 ml-2">（心理カウンセラー）</span></h4>
                 <p class="text-gray-600 mb-6 leading-relaxed text-sm">
