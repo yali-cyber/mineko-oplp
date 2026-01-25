@@ -72,24 +72,49 @@
             transform: translateY(0);
         }
 
-        /* Button Shine Effect */
-        .btn-shine {
+        /* ▼▼▼ 新しいキラキラボタンのスタイル ▼▼▼ */
+        .btn-sparkle {
+            /* 立体感のある明るいゴールドグラデーション */
+            background: linear-gradient(180deg, #FDE047 0%, #EAB308 40%, #CA8A04 100%);
             position: relative;
             overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            /* 光彩のシャドウ */
+            box-shadow: 0 4px 15px rgba(234, 179, 8, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+            border: 1px solid #FEF08A;
+            text-shadow: 0 1px 2px rgba(161, 98, 7, 0.3);
         }
-        .btn-shine::after {
+
+        /* ホバー時の挙動：浮き上がって明るくなる */
+        .btn-sparkle:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 8px 25px rgba(234, 179, 8, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+            filter: brightness(1.1);
+        }
+
+        /* キラリと光るアニメーション（光沢） */
+        .btn-sparkle::after {
             content: '';
             position: absolute;
             top: 0;
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(to right, transparent, rgba(255,255,255,0.4), transparent);
-            transition: 0.5s;
+            /* 白い光の帯 */
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.8), transparent);
+            transform: skewX(-20deg);
+            /* 3秒ごとに光る */
+            animation: sparkle-anim 3s infinite;
         }
-        .btn-shine:hover::after {
-            left: 100%;
+
+        @keyframes sparkle-anim {
+            0% { left: -100%; opacity: 0; }
+            5% { opacity: 1; }
+            20% { left: 200%; opacity: 0; } /* 素早く通り過ぎる */
+            100% { left: 200%; opacity: 0; }
         }
+        /* ▲▲▲ ここまで ▲▲▲ */
+
         /* Smooth Scroll */
         html {
             scroll-behavior: smooth;
@@ -141,7 +166,8 @@
                     </p>
                 </div>
                 
-                <a href="#register" class="btn-shine inline-block bg-gradient-to-r from-brand-gold to-yellow-600 text-white font-bold text-xl px-10 py-5 rounded-full shadow-lg transform hover:scale-105 transition duration-300 w-full md:w-auto max-w-md">
+                <!-- ▼▼▼ ボタンのデザインを変更しました ▼▼▼ -->
+                <a href="#register" class="btn-sparkle inline-block text-white font-bold text-xl md:text-2xl px-12 py-5 rounded-full w-full md:w-auto max-w-md tracking-wider">
                     今すぐ「寂寥感の正体」を知る
                     <span class="block text-xs font-normal mt-1 opacity-90">※完全無料・いつでも解除可能</span>
                 </a>
@@ -316,7 +342,6 @@
             
             <div class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-brand-navy">
                 <div class="w-32 h-32 mx-auto rounded-full overflow-hidden mb-6 border-4 border-gray-100">
-                     <!-- ▼▼▼ ここを修正しました ▼▼▼ -->
                      <!-- imagesフォルダを使わず、ファイル隣のprofile.png (または .jpg) を読み込みます -->
                      <img src="./profile.png" alt="心みねこ" class="w-full h-full object-cover">
                 </div>
@@ -361,7 +386,8 @@
                             class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-brand-gold focus:ring-2 focus:ring-brand-gold/50 outline-none transition bg-gray-50">
                     </div>
                     
-                    <button type="submit" class="btn-shine w-full bg-gradient-to-r from-brand-gold to-yellow-600 text-white font-bold text-xl py-4 rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition duration-300">
+                    <!-- ▼▼▼ ボタンのデザインを変更しました ▼▼▼ -->
+                    <button type="submit" class="btn-sparkle w-full text-white font-bold text-xl py-4 rounded-lg shadow-lg transform hover:-translate-y-1 transition duration-300 tracking-wider">
                         特典付きで無料レッスンを受講する
                     </button>
                     
